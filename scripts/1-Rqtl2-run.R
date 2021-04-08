@@ -23,7 +23,7 @@ library (RSQLite)
 ## Read in the control file (gm.json)
 ####################################################
 
-  R01_GSH_DO_QTLdata <- read_cross2(file = "~/Liver-Glutathione/data/control.json")
+  R01_GSH_DO_QTLdata <- read_cross2(file = "~/Rqtl2-Liver-Glutathione/data/control.json")
 
   
 
@@ -31,7 +31,7 @@ library (RSQLite)
 ## Genotype probabilities and allele probabilities - calculated by the Jackson Laboratory
 ####################################################
   
-  probs <- readRDS("~/Rqtl2-Glutathione-Genetics/data/Pazdro_GigaMUGA_genoprobs_qced_8state_sorted.rds")
+  probs <- readRDS("~/Rqtl2-Liver-Glutathione/data/Pazdro_GigaMUGA_genoprobs_qced_8state_sorted.rds")
 
 
   
