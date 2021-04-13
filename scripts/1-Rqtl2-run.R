@@ -458,11 +458,8 @@ library (RSQLite)
   
   
 ####################################################
-## Export all QTL with LOD scores > 6 and all genes in QTL intervals
+## Export genes 
 ####################################################
-
-qtl_gmap <- find_peaks(scans, map = control$gmap, threshold = 6, peakdrop = 1.8, drop = 1.5, expand2markers = FALSE)
-qtl_gmap
 
 write_xlsx(list(  "GSH chr14" = LiverGSH_Genes_MGI_chr14, 
                   "Total GSH chr14" = LiverTotalGSH_Genes_MGI_chr14, 
@@ -478,8 +475,10 @@ write_xlsx(list(  "NADP chr3" = LiverNADP_Genes_MGI_chr3,
 
 
 ####################################################
-## Export all QTL with LOD scores > 6 and all genes in QTL intervals
+## Export all QTL with LOD scores > 6
 ####################################################
+
+scans <- cbind(qtlscan_LiverGSH, qtlscan_LiverGSSG, qtlscan_LiverTotalGSH, qtlscan_LiverGSH_GSSGRatio, qtlscan_LiverRedoxPotentialGSSG2GSH, qtlscan_LiverNADH, qtlscan_LiverNADP, qtlscan_LiverNADPH, qtlscan_LiverNADP_NADPHRatio)
 
 qtl_gmap <- find_peaks(scans, map = control$gmap, threshold = 6, peakdrop = 1.8, drop = 1.5, expand2markers = FALSE)
 qtl_pmap <- find_peaks(scans, map = control$pmap, threshold = 6, peakdrop = 1.8, drop = 1.5, expand2markers = FALSE)
